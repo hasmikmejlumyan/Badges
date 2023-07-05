@@ -1,13 +1,17 @@
 <template>
     <section>
-        <div>
-            <h3>
-                {{ fullName }}
-                <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
-            </h3>
-        </div>
+        <base-card>
+            <template #header>
+                <header>
+                    <h3>{{ fullName }}</h3>
+                    <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
+                </header>
+            </template>
 
-        <p>{{ infoText }}</p>
+            <template #default>
+                <p>{{ infoText }}</p>
+            </template>
+        </base-card>
     </section>
 </template>
 
@@ -16,3 +20,4 @@
         props: ['fullName', 'infoText', 'role'],
     }
 </script>
+
